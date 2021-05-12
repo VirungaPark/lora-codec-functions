@@ -3,6 +3,14 @@ function Decode(fPort, bytes, variables) {
     return (dec >>> 0).toString(2);
   }
 
+  function bitsToInt(bits) {
+    var result = 0;
+    bits.forEach(function (bite, index) {
+      result += bite * Math.pow(2, Math.abs(index - bits.length + 1));
+    });
+    return result;
+  }
+
   var payloadByte = "";
   bytes.forEach(function (byteInt) {
     payloadByte += dec2bin(byteInt);
