@@ -3,7 +3,7 @@ function Decode(fPort, bytes, variables) {
 
   function dec2bin(dec) {
     var bits = (dec >>> 0).toString(2);
-    return "0".repeat(8 - bits.length) + bits;
+    return Array(9 - bits.length).join("0") + bits;
   }
 
   if (fPort === 2) {
