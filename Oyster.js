@@ -1,4 +1,4 @@
-function Decode(bytes, fPort, variables) {
+function Decode(fPort, bytes, variables) {
   if (bytes == null) return null;
 
   var decoded = {};
