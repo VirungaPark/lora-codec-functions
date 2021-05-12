@@ -28,5 +28,6 @@ function Decode(fPort, bytes, variables) {
     decoded.reportType = "n/a";
   }
 
-  console.log(decoded);
+  console.log("decoded payload: " + JSON.stringify(decoded, null, "\t"));
+  return decoded;
 }

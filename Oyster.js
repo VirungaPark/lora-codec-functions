@@ -93,5 +93,6 @@ function Decode(fPort, bytes, variables) {
     decoded.uptimeWeeks = 1 * ((bytes[9] >> 7) + (bytes[10] & 0xff) * 2);
   }
 
+  console.log("decoded payload: " + JSON.stringify(decoded, null, "\t"));
   return decoded;
 }
