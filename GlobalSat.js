@@ -16,7 +16,7 @@ function Decode(fPort, bytes, variables) {
 
   switch (gpsFixStatus) {
     case 0:
-      decoded.gpsFixStatus = "not fix";
+      decoded.gpsFixStatus = "no fix";
       break;
     case 1:
       decoded.gpsFixStatus = "2D";
@@ -30,40 +30,40 @@ function Decode(fPort, bytes, variables) {
 
   switch (reportType) {
     case 2:
-      decoded.reportType = "Period mode report";
+      decoded.reportType = "period mode report";
       break;
     case 4:
-      decoded.reportType = "Motion mode static report";
+      decoded.reportType = "motion mode static report";
       break;
     case 5:
-      decoded.reportType = "Motion mode moving report";
+      decoded.reportType = "motion mode moving report";
       break;
     case 6:
-      decoded.reportType = "Motion mode static to moving report";
+      decoded.reportType = "motion mode static to moving report";
       break;
     case 7:
-      decoded.reportType = "Motion mode moving to static report";
+      decoded.reportType = "motion mode moving to static report";
       break;
     case 14:
-      decoded.reportType = "Help report";
+      decoded.reportType = "sos";
       break;
     case 15:
-      decoded.reportType = "Low battery alarm report";
+      decoded.reportType = "low battery alarm report";
       break;
     case 17:
-      decoded.reportType = "Power on (temperature)";
+      decoded.reportType = "power on (temperature)";
       break;
     case 19:
-      decoded.reportType = "Power off (low battery)";
+      decoded.reportType = "power off (low battery)";
       break;
     case 20:
-      decoded.reportType = "Power off (temperature)";
+      decoded.reportType = "power off (temperature)";
       break;
     case 24:
-      decoded.reportType = "Fall advisory report";
+      decoded.reportType = "fall advisory report";
       break;
     case 27:
-      decoded.reportType = "Fpending report";
+      decoded.reportType = "fpending report";
       break;
     default:
       decoded.reportType = "n/a";
