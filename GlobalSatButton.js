@@ -1,4 +1,7 @@
-function Decode(fPort, bytes, variables) {
+function decodeUplink(input) {
+
+  var bytes = input.bytes;
+
   var gpsFixStatus = Math.floor(bytes[1] / 64);
   var reportType = bytes[1] % 64;
   var batteryCapacity = bytes[2];
@@ -69,6 +72,13 @@ function Decode(fPort, bytes, variables) {
       decoded.reportType = "n/a";
   }
 
-  console.log("decoded payload: " + JSON.stringify(decoded, null, "\t"));
-  return decoded;
+  var warnings = [];
+  if (decoded.batteryCapacity < 10) {
+      warnings.push("low battery");
+  }
+
+  return {
+    data: decoded,
+    warnings: warnings
+  };
 }
